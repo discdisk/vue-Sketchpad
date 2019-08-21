@@ -8,7 +8,7 @@
     </div>
     <input v-on:change='sliderValue' type="range" min="1" max="30" value="10" class="slider" id="myRange">
     <p>The recognition result is {{ result }} .</p>
-    <canvas id="mycanvas" v-on:mousedown="startDraw" v-on:mousemove="draw" v-on:mouseup="stopDraw"   width="400" height="400" style=" border:6px solid #c3c3c3;">not supported!</canvas>
+    <canvas id="mycanvas" v-on:mousedown="startDraw" v-on:mousemove="draw" v-on:mouseup="stopDraw" @touchstart.prevent="startDraw" @touchmove.prevent="drawTouch" width="400" height="400" style=" border:6px solid #c3c3c3;">not supported!</canvas>
   </div>
 </template>
 
@@ -29,6 +29,19 @@ export default {
       eraserColor:"white"}
   },
   methods:{
+    log(e){
+      console.log(e.changedTouches[0])
+    },
+    drawTouch(e){
+      if(this.isCanvasMouseDown){
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.fillStyle = this.paintColor;
+        ctx.arc(e.changedTouches[0].pageX-e.changedTouches[0].target.offsetLeft,e.changedTouches[0].pageY-e.changedTouches[0].target.offsetTop,this.paintSize,0,2*Math.PI);  //arc(x,y,r,start,stop)
+        ctx.fill();
+      }
+    },
     send(){
       var canvas = document.getElementById("mycanvas");
       console.log(canvas.toDataURL())
