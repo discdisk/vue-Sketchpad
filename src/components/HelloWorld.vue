@@ -93,11 +93,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .btnFunc{
-  
+  disply:flex;
 }
 
 button {
   border:hidden;
+  flex:1;
   margin: 1px;
   width: 17%;
   background:palegreen;
