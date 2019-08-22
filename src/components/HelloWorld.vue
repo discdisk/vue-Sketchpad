@@ -12,7 +12,7 @@
     </div>
     <input v-model='paintSize' type="range" min="1" max="30" value=10 class="slider" id="myRange">
     <h2 v-if='recognitionSuccess'>The recognition result is {{ result }} .</h2>
-    <h2 v-else>ERROR.</h2>
+    <h2 v-else>SERVER URL ERROR.</h2>
     <canvas id="mycanvas" v-on:mousedown="startDraw" v-on:mousemove="draw" v-on:mouseup="stopDraw" v-on:mouseleave="stopDraw" @touchstart.prevent="startDraw" @touchmove.prevent="drawTouch" width="400" height="400" style="background:green; border:1px solid #c3c3c3; margin:0 auto;">not supported!</canvas>
     <div style="height:100px"></div>
   </div>
@@ -116,6 +116,9 @@ export default {
 }
 
 button {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  font:italic;
   border:hidden;
   font-size: 30px;
   flex:1;
