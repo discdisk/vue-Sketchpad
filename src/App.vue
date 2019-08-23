@@ -1,17 +1,20 @@
 <template>
+
   <div id="app">
+    <navBar/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <sketchPad user="discdisk"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import sketchPad from './components/sketchPad.vue'
+import navBar from './components/navBar.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    sketchPad,
+    navBar
   }
 }
 </script>
@@ -27,5 +30,6 @@ export default {
   min-width: 600px;
   margin-left: -10px;
   margin-top: -5px;
+  margin:-10px;
 }
 </style>

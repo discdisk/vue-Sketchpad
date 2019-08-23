@@ -1,6 +1,6 @@
 <template>
   <div id="skechPad">
-    <h1>{{msg}}</h1>
+    <h1>Welcome to sketchPad {{user}}!!!</h1>
     <div>
       <label style=" ">recognition service URL: </label>
       <input type="text" v-model=ImageProcessServer placeholder="http://localhost:5000/demotext" style="width: 50%; margin-bottom:5px;">
@@ -10,7 +10,7 @@
       <button id="ebtn" v-on:click ="eraser">eraser</button>
       <button v-on:click ="send">send</button>
     </div>
-    <input v-model='paintSize' type="range" min="1" max="30" value=10 class="slider" id="myRange">
+    <input v-model='paintSize' type="range" min="1" max="30" value=10 class="slider" id="myRange" >
     <h2 v-if='recognitionSuccess'>The recognition result is {{ result }} .</h2>
     <h2 v-else>SERVER URL ERROR.</h2>
     <canvas id="mycanvas" v-on:mousedown="startDraw" v-on:mousemove="draw" v-on:mouseup="stopDraw" v-on:mouseleave="stopDraw" @touchstart.prevent="startDraw" @touchmove.prevent="drawTouch" width="400" height="400" style="background:green; border:1px solid #c3c3c3; margin:0 auto;">not supported!</canvas>
@@ -21,9 +21,9 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'HelloWorld',
+  name: 'sketchPad',
   props: {
-    msg: String,
+    user: String,
   },
   data: function(){
     return {
@@ -68,7 +68,7 @@ export default {
       this.usePen=!this.usePen
       if (this.usePen) {
         this.paintColor=this.penColor
-        eraserBtn.style.background = "palegreen";
+        eraserBtn.style.background = 'rgb(255, 255, 255,0.5)';
       } else{
         this.paintColor=this.eraserColor
         eraserBtn.style.background = "oldlace";
@@ -119,17 +119,19 @@ button {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #2c3e50;
   font:italic;
-  border:hidden;
+  border:1px;
+  border-color: rgb(52, 101, 124);
+  border-style: solid;
+  border-radius: 6px;
   font-size: 30px;
   flex:1;
   -webkit-box-flex: 1;
   margin: 1px;
-  background:palegreen;
+  background:rgb(255, 255, 255,0.5);
 
 }
 
 .slider {
-  
   margin: 1px;
   margin-top:10px;
   -webkit-appearance: none;
@@ -159,6 +161,6 @@ button {
   width: 25px;
   height: 25px;
   background: #4CAF50;
-  cursor: pointer;
+  cursor:pointer;
 }
 </style>

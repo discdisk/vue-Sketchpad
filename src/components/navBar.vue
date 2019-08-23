@@ -1,0 +1,43 @@
+<template>
+    <nav>
+      <a href="https://discdisk.github.io/sketchpad-deploy/">Home</a>
+      <a href="#3">Next</a>
+      <a href="#2">Previous</a>
+    </nav>
+</template>
+
+<script>
+export default {
+  name: 'navBar'
+}
+</script>
+
+<style scoped>
+nav{
+    /* display: -webkit-flex;
+    display: flex; */
+
+    background-color: #333;
+    overflow: hidden;
+}
+nav a{
+    
+    /* flex:1;
+    -webkit-box-flex: 1; */
+
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+nav a:active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
