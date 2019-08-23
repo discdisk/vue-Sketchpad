@@ -1,9 +1,15 @@
 <template>
+<div>
+    
     <nav>
       <a href="https://discdisk.github.io/sketchpad-deploy/">Home</a>
       <a href="#3">Next</a>
       <a href="#2">Previous</a>
     </nav>
+    <div style="padding:25px"></div>
+
+</div>
+
 </template>
 
 <script>
@@ -16,9 +22,12 @@ export default {
 nav{
     /* display: -webkit-flex;
     display: flex; */
-
+    position: fixed;
+    width: 100%;
+    
     background-color: #333;
     overflow: hidden;
+    padding-right: 5px;
 }
 nav a{
     
