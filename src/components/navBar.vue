@@ -2,9 +2,9 @@
 <div>
     
     <nav>
-      <a href="https://discdisk.github.io/sketchpad-deploy/">Home</a>
-      <a href="#3">Next</a>
-      <a href="#2">Previous</a>
+      <router-link to="/">SketchPad</router-link>
+      <router-link to="/about">About</router-link>
+      <a href="https://discdisk.github.io/sketchpad-deploy">github page</a>
     </nav>
     <div style="padding:25px"></div>
 

@@ -1,24 +1,22 @@
 <template>
-
-  <div id="app">
+  <div id="app" >
     <navBar/>
-    
-    <img alt="Vue logo" src="./assets/logo.png">
-    <sketchPad user="discdisk"/>
+     <router-view></router-view>
   </div>
 </template>
 
+
+
 <script>
-import sketchPad from './components/sketchPad.vue'
-import navBar from './components/navBar.vue'
+import navBar from './components/navBar'
 export default {
   name: 'app',
   components: {
-    sketchPad,
     navBar
   }
 }
 </script>
+
 
 <style>
 #app {
@@ -29,6 +27,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   min-width: 600px;
+  min-height: 800px;
   margin-left: -10px;
   /* margin-top: -5px; */
   margin:-10px;
